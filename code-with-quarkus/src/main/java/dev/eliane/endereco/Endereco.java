@@ -3,11 +3,11 @@ package dev.eliane.endereco;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "endereco")
 public class Endereco {
 
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // ID gerado automaticamente pelo banco de dados
+    private Long id;
 
     private String rua;
     private String bairro;
@@ -37,11 +37,11 @@ public class Endereco {
         this.numero = numero;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }
