@@ -18,7 +18,7 @@ public class PessoaResource {
 
     @GET
     public Response getTodasPessoas() {
-        List<Pessoa> pessoas = pessoaRepository.listAll(); // Agora busca do banco
+        List<Pessoa> pessoas = pessoaRepository.listAll();
         return Response.ok(pessoas).build();
     }
 
@@ -26,7 +26,7 @@ public class PessoaResource {
     @Transactional
     public Response postPessoa(Pessoa pessoa) {
         if (pessoa.getEndereco() != null) {
-            enderecoRepository.persist(pessoa.getEndereco()); // Agora deve funcionar corretamente
+            enderecoRepository.persist(pessoa.getEndereco());
         }
         pessoaRepository.persist(pessoa);
         return Response.ok(pessoa).build();

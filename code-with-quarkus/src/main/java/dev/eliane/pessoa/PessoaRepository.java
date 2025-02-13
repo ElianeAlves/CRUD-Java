@@ -6,8 +6,4 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class PessoaRepository implements PanacheRepository<Pessoa> {
 
-
-    public void postPessoa(Pessoa pessoa) {
-        this.persist(pessoa);
-    }
 }

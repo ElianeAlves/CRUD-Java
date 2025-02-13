@@ -5,11 +5,11 @@ import dev.eliane.especialidade.Especialidade;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "pessoa")  // Nome da tabela no banco de dados
+@Table(name = "pessoa")
 public class Pessoa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // ID gerado automaticamente pelo banco de dados
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -22,7 +22,14 @@ public class Pessoa {
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
-    // Getters e setters para os atributos
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -47,27 +54,7 @@ public class Pessoa {
         this.idade = idade;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Endereco getEndereco() {
         return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public Especialidade getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(Especialidade especialidade) {
-        this.especialidade = especialidade;
     }
 }
